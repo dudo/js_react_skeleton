@@ -1,0 +1,28 @@
+version: "3.8"
+# https://docs.docker.com/docker-for-mac/osxfs/
+services:
+  my_app:
+    container_name: my-app
+    build: .
+    entrypoint: npm
+    command: start
+    volumes:
+      - node:/node_modules:cached
+    ports:
+      - 1234:1234
+
+  npm:
+    build: .
+    entrypoint: npm
+    command: -v
+    volumes:
+      - node:/node_modules:cached
+
+  aws:
+    image: amazon/aws-cli
+    command: --version
+    volumes:
+      - ~/.aws:/root/.aws
+
+volumes:
+  node: {}

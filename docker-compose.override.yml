@@ -1,0 +1,24 @@
+version: "3.8"
+# https://docs.docker.com/docker-for-mac/osxfs/
+# `docker-compose up` automatically reads the override file and applies it.
+services:
+  my_app:
+    env_file: .env # Be aware that this prevents any ARG or ENV settings from Dockerfile to be loaded
+    ports:
+      - 1235:1235 # this is for debugging within chrome via websockets
+    volumes:
+      - .:/usr/src/app:delegated
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.my-project.rule=Host(`my-project.localhost`) && Path(`/foo`)
+      - traefik.http.routers.my-project.entrypoints=web
+
+  npm:
+    volumes:
+      - .:/usr/src/app:delegated
+
+  aws:
+    environment:
+      - AWS_PROFILE=default
+    volumes:
+      - ./dist:/usr/src/app/dist:delegated
