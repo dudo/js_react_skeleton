@@ -7,7 +7,7 @@ services:
     entrypoint: npm
     command: start
     volumes:
-      - node:/node_modules:cached
+      - node:/node_modules:delegated
     ports:
       - 1234:1234
 
@@ -16,7 +16,7 @@ services:
     entrypoint: npm
     command: -v
     volumes:
-      - node:/node_modules:cached
+      - node:/node_modules:delegated
 
   aws:
     image: amazon/aws-cli

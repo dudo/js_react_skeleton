@@ -1,6 +1,6 @@
 # [My App](http://my_app.io)
 
-Built from [nano-react-app](https://github.com/adrianmcli/nano-react-app) - which makes use of [Parcel](https://parceljs.org/), but code wise is entirely React.
+Built with [Parcel](https://parceljs.org/), but code wise is entirely React.
 
 ## System Architecture
 

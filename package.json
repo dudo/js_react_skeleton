@@ -4,42 +4,27 @@
   "private": true,
   "description": "",
   "scripts": {
-    "start": "parcel index.html --hmr-port 1235",
-    "build": "parcel build index.html"
+    "start": "parcel serve ./src/index.html --hmr-port 1235",
+    "build": "parcel build ./src/index.html"
   },
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "bulma": "^0.9.0",
-    "components": "^0.1.0",
-    "contexts": "0.0.0",
     "json-api-serializer": "^2.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.0",
-    "react-router-dom": "^5.2.0",
-    "routes": "^2.1.0"
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.3",
-    "babel-preset-nano-react-app": "^0.1.0",
-    "parcel-bundler": "^1.12.4"
-  },
-  "babel": {
-    "presets": [
-      "nano-react-app"
-    ],
-    "plugins": [
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ],
-      [
-        "@babel/plugin-transform-react-jsx",
-        {
-          "pragmaFrag": "React.Fragment"
-        }
-      ]
-    ]
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-plugin-react": "^7.21.3",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "parcel": "^2.0.0-nightly.420"
   },
   "browserslist": {
     "production": [
