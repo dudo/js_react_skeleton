@@ -12,7 +12,7 @@ jobs:
     outputs:
       git_tag_name: ${{ steps.tag_check.outputs.git_tag_name }}
     steps:
-      - uses: actions/checkout@v2 # https://github.com/actions/checkout
+      - uses: actions/checkout@v3 # https://github.com/actions/checkout
       - uses: dudo/tag_check@v1.1.0
         id: tag_check
         with:
